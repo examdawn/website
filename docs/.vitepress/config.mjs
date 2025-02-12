@@ -2,6 +2,8 @@ import { withMermaid } from "vitepress-plugin-mermaid"
 import { withSidebar } from "vitepress-sidebar"
 import { defineConfig } from "vite";
 
+const basePaths = ["NEP2020/2023/BCA"]; // Put paths here, seperated by commas 
+
 function genSidebarConfig(doc) { // referenced from FOSSonTOP(credit to @PugzAreCute) https://github.com/FOSSonTop/website/blob/main/docs/.vitepress/config.mts
   return {
     documentRootPath: 'docs',
@@ -19,7 +21,6 @@ function genSidebarConfig(doc) { // referenced from FOSSonTOP(credit to @PugzAre
     useTitleFromFrontmatter: true
   };
 }
-const basePaths = ["NEP2020/2023/BCA"]; // Put paths here, seperated by commas 
 
 const vitePressSidebarOptions = basePaths.map(path => genSidebarConfig(path));
 
