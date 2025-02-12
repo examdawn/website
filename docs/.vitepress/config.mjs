@@ -1,8 +1,6 @@
 import { withMermaid } from "vitepress-plugin-mermaid"
 import { withSidebar } from "vitepress-sidebar"
 import { defineConfig } from "vite";
-import fs from 'fs';
-import path from 'path';
 
 function genSidebarConfig(doc) {
   return {
@@ -21,17 +19,10 @@ function genSidebarConfig(doc) {
     useTitleFromFrontmatter: true
   };
 }
-const basePaths = ['NEP2020/2023/BCA/3rdsem', 'NEP2020/2023/BCA/3rdsem']; // Relative to docs folder
+const basePaths = ["NEP2020/2023/BCA/3rdsem", "NEP2020/2023/BCA/4thsem"]; // Relative to docs folder
 
-const semFolders = basePaths.reduce((acc, basePath) => {
-  const fullPath = path.join('docs', basePath);
-  if (fs.existsSync(fullPath)) {
-    return [...acc, basePath];
-  }
-  return acc;
-}, []);
+const vitePressSidebarOptions = basePaths.map(path => genSidebarConfig(path));
 
-const vitePressSidebarOptions = semFolders.map(path => genSidebarConfig(path));
 
 const mermaidConfig = withSidebar({
   title: "Exam Dawn",
@@ -74,4 +65,4 @@ const mermaidConfig = withSidebar({
 
 const mermaidWithSidebar = withMermaid(mermaidConfig);
 
-export default defineConfig(withSidebar(mermaidWithSidebar, ...vitePressSidebarOptions));  
+export default defineConfig(withSidebar(mermaidWithSidebar, vitePressSidebarOptions));  
