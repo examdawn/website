@@ -34,11 +34,11 @@ const mermaidConfig = withSidebar({
   themeConfig: {
     editLink: {
       pattern: ({ filePath }) => {
-        if (filePath.startsWith('NEP2020/') && !/(assignment|lab|notes|solved)/.test(filePath)) {
+        if (filePath.startsWith('NEP2020/')) {
           const parts = filePath.split('/');
           const year = parts[1];
           const courseName = parts[2].replace(/\s+/g, '_');
-          return `https://github.com/examdawn/NEP2020_${year}_${courseName}/edit/${filePath}`
+          return `https://github.com/examdawn/NEP2020_${year}_${courseName}/edit/contents/${filePath}`
         }
       }
     },
