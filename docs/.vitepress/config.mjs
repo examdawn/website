@@ -2,7 +2,7 @@ import { withMermaid } from "vitepress-plugin-mermaid"
 import { withSidebar } from "vitepress-sidebar"
 import { defineConfig } from "vite";
 
-function genSidebarConfig(doc) {
+function genSidebarConfig(doc) { // referenced from FOSSonTOP(credit to @PugzAreCute) https://github.com/FOSSonTop/website/blob/main/docs/.vitepress/config.mts
   return {
     documentRootPath: 'docs',
     scanStartPath: doc,
