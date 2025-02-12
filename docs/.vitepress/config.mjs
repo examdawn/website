@@ -21,6 +21,11 @@ const mermaidConfig = withSidebar({
       pattern: ({ filePath }) => {
         if (filePath.startsWith('contents/')) {
           return `https://github.com/examdawn/content/edit/${filePath}`
+        } else if (filePath.startsWith('NEP2020/')) {
+          const parts = filePath.split('/');
+          const year = parts[1];
+          const courseName = parts[2].replace(/\s+/g, '_');
+          return `https://github.com/examdawn/NEP2020_${year}_${courseName}/edit/contents/${filePath}`
         } else {
           return `https://github.com/examdawn/examdawn.github.io/edit/vitepress/docs/${filePath}`
         }
@@ -31,10 +36,10 @@ const mermaidConfig = withSidebar({
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Contribute', link: "/contents/Contribute" },
-      { text: 'Request Takedown', link: "/contents/takedown" },
-      { text: 'Typography', link: "/contents/typography" },
-      { text: 'Queries and Suggestions', link: "https://github.com/examdawn/content/issues" },
+      { text: 'Contribute', link: "./contribute" },
+      { text: 'Request Takedown', link: "./takedown" },
+      { text: 'Typography', link: "./typography" },
+      { text: 'Queries and Suggestions', link: "https://github.com/examdawn/website/issues" },
     ]
   },
   markdown: {
