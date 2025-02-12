@@ -2,13 +2,27 @@ import { withMermaid } from "vitepress-plugin-mermaid"
 import { withSidebar } from "vitepress-sidebar"
 import { defineConfig } from "vite";
 
-const vitePressSidebarOptions = {
-  documentRootPath: '/',
-  collapsed: false,
-  capitalizeFirst: true,
-  excludePattern: ['README.md'],
-  useFolderTitleFromIndexFile: true
-};
+function genSidebarConfig(doc) {
+  return {
+    documentRootPath: 'docs',
+    scanStartPath: doc,
+    resolvePath: `/${doc}/`,
+    collapsed: true,
+    hyphenToSpace: true,
+    capitalizeEachWords: true,
+    underscoreToSpace: true,
+    includeEmptyFolder: false,
+    sortMenusByName: false,
+    excludePattern: ['README**'],
+    sortMenusByFrontmatterOrder: true,
+    includeFolderIndexFile: true,
+    useTitleFromFrontmatter: true
+  };
+}
+
+const paths = ['./NEP2020/2023/BCA']; // Add your paths here
+
+const vitePressSidebarOptions = paths.map(path => genSidebarConfig(path));
 
 const mermaidConfig = withSidebar({
   title: "Exam Dawn",
@@ -19,13 +33,11 @@ const mermaidConfig = withSidebar({
   themeConfig: {
     editLink: {
       pattern: ({ filePath }) => {
-        if (filePath.startsWith('contents/')) {
-          return `https://github.com/examdawn/content/edit/${filePath}`
-        } else if (filePath.startsWith('NEP2020/')) {
+        if (filePath.startsWith('NEP2020/')) {
           const parts = filePath.split('/');
           const year = parts[1];
           const courseName = parts[2].replace(/\s+/g, '_');
-          return `https://github.com/examdawn/NEP2020_${year}_${courseName}/edit/contents/${filePath}`
+          return `https://github.com/examdawn/NEP2020_${year}_${courseName}/edit/${filePath}`
         } else {
           return `https://github.com/examdawn/examdawn.github.io/edit/vitepress/docs/${filePath}`
         }
@@ -55,4 +67,4 @@ const mermaidConfig = withSidebar({
 
 const mermaidWithSidebar = withMermaid(mermaidConfig);
 
-export default defineConfig(withSidebar(mermaidWithSidebar, vitePressSidebarOptions));  
+export default defineConfig(withSidebar(mermaidWithSidebar, ...vitePressSidebarOptions));  
