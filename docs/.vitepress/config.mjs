@@ -52,6 +52,13 @@ const mermaidConfig = withSidebar({
       { text: 'Request Takedown', link: "/takedown" },
       { text: 'Typography', link: "/typography" },
       { text: 'Queries and Suggestions', link: "https://github.com/examdawn/website/issues" },
+    ],
+    socialLinks: [
+      { 
+        icon: 'github',
+        link: 'https://github.com/examdawn/',
+        ariaLabel: 'Our Git Profile'
+      }
     ]
   },
   markdown: {
