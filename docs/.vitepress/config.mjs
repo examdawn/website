@@ -19,7 +19,7 @@ function genSidebarConfig(doc) { // referenced from FOSSonTOP(credit to @PugzAre
     useTitleFromFrontmatter: true
   };
 }
-const basePaths = ["NEP2020/2023/BCA/3rdsem", "NEP2020/2023/BCA/4thsem"]; // Relative to docs folder
+const basePaths = ["NEP2020/2023/BCA"]; // Put paths here, seperated by commas 
 
 const vitePressSidebarOptions = basePaths.map(path => genSidebarConfig(path));
 
