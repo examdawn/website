@@ -11,6 +11,5 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "xml2js": "^0.6.2"
   }
 }

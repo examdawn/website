@@ -52,16 +52,16 @@ jobs:
         run: npm ci # or pnpm install / yarn install / bun install
       - name: Update Submodule
         run: git submodule update --init --remote # Initialize and update all submodules to their latest commits.
-      - name: Generate Sidebar(for Future Use) and The rest of the scripts
-        run: |
-          cd docs/contents/
-          echo "Generating Sidebar XML..."
-          bash helper-scripts/gen-subxml.sh
-          echo "Outputting Sidebar XML..."
-          cat sidebar.xml
-      
-          echo "Generating assignment.md, lab.md, solved.md"
-          bash helper-scripts/gen-md.sh
+      #- name: Generate Sidebar(for Future Use) and The rest of the scripts
+      #  run: |
+      #    cd docs/contents/
+      #    echo "Generating Sidebar XML..."
+      #    bash helper-scripts/gen-subxml.sh
+      #    echo "Outputting Sidebar XML..."
+      #    cat sidebar.xml
+     # 
+     #     echo "Generating assignment.md, lab.md, solved.md"
+     #     bash helper-scripts/gen-md.sh
       - name: Build with VitePress
         run: npm run docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
