@@ -1,5 +1,6 @@
 import { withMermaid } from "vitepress-plugin-mermaid"
 import { withSidebar } from "vitepress-sidebar"
+import { vitepressPythonEditor } from 'vitepress-python-editor/vite-plugin'
 import { defineConfig } from "vite";
 
 const basePaths = ["NEP2020/2023/BCA"]; // Put paths here, seperated by commas 
@@ -60,6 +61,11 @@ const mermaidConfig = withSidebar({
         ariaLabel: 'Our Git Profile'
       }
     ]
+  },
+  vite: {
+    plugins: [
+      vitepressPythonEditor({ assetsDir: 'docs/.vitepress/dist/assets' }),
+    ],
   },
   markdown: {
     math: true
