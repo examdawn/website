@@ -12,7 +12,7 @@ features:
     link: ./NEP2020/2023/BCA
 
   - icon: <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#634FA2"><path d="M40-120v-80h880v80H40Zm120-120q-33 0-56.5-23.5T80-320v-440q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v440q0 33-23.5 56.5T800-240H160Zm0-80h640v-440H160v440Zm0 0v-440 440Z"/></svg> 
-    title: BCA - 2023 (WIP)
+    title: BCA - 2024 (WIP)
     details: BCA Section For 2024 Batch
     link: ./NEP2020/2024/BCA
 
