@@ -10,5 +10,8 @@ features:
     title: BCA - 2023
     details: BCA Section For 2023 Batch
     link: ./NEP2020/2023/BCA
+    title: BSc - 2024
+    details: BSc Section For 2024 Batch
+    link: ./NEP2020/2024/BSc
 ---
 

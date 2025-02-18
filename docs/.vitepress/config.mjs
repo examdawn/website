@@ -3,7 +3,7 @@ import { withSidebar } from "vitepress-sidebar"
 import { vitepressPythonEditor } from 'vitepress-python-editor/vite-plugin'
 import { defineConfig } from "vite";
 
-const basePaths = ["NEP2020/2023/BCA"]; // Put paths here, seperated by commas 
+const basePaths = ["NEP2020/2023/BCA", "NEP2020/2024/BSc"]; // Put paths here, seperated by commas 
 
 function genSidebarConfig(doc) { // referenced from FOSSonTOP(credit to @PugzAreCute) https://github.com/FOSSonTop/website/blob/main/docs/.vitepress/config.mts
   return {
