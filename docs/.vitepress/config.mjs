@@ -19,6 +19,7 @@ function genSidebarConfig(doc) { // referenced from FOSSonTOP(credit to @PugzAre
     capitalizeEachWords: true,
     underscoreToSpace: true,
     includeEmptyFolder: false,
+    excludeFilesByFrontmatterFieldName: 'exclude',
     sortMenusByName: false,
     excludePattern: ['README**', 'solved.md', 'lab.md', 'assignment.md'],
     sortMenusByFrontmatterOrder: true,
