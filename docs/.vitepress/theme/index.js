@@ -2,6 +2,7 @@
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import Editor from 'vitepress-python-editor'
+import JupyterLite from './components/JupyterLite.vue'
 import './style.css'
 
 /** @type {import('vitepress').Theme} */
@@ -13,6 +14,7 @@ export default {
     })
   },
   enhanceApp({ app }) {
+    app.component('JupyterLite', JupyterLite)
     app.component('Editor', Editor)
   }
 }
